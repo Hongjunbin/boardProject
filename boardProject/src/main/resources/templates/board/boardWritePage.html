@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#board_write_border{
+		margin: auto;
+		width: 800px;
+	}
+	#board_hwrite_header{
+		font-weight: bold;
+		font-size: 20px;
+	}
+	#title_write_border{
+		border: 1px solid #cfcfcf;
+		border-top: none;
+		width: auto;
+		height: 40px;
+		padding: 15px;
+	}
+	#create_wrtie_border{
+		border: 1px solid #cfcfcf;
+	}
+	#board_title{
+		height: 100%;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	#category_border{
+		border: 1px solid #cfcfcf;
+		border-bottom: none;
+		width: auto;
+		height: 40px;
+		padding: 15px;
+	}
+	#category{
+		height: 100%;
+		width: 100%;
+	}
+	#create_wrtie_border{
+		border: 1px solid #cfcfcf;
+		width: auto;
+		height: 400px;
+		padding: 15px;
+	}
+	#board_write_area{
+		width: 100%;
+		height: 100%;
+		border: 1px solid black;
+		resize: none;
+		box-sizing: border-box;
+	}
+	#border_submit_btn{
+		border-bottom: none;
+		width: auto;
+		height: 40px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-left: 325px;
+		padding-right: 325px;
+	}
+	#submit_btn{
+		width: 100%;
+		height: 100%;
+	}
+	
+</style>
+</head>
+<body>
+	<div th:replace="~{common/header :: header}"></div>
+	<br>
+	<div id="board_write_border">
+		<div id="board_write_header">
+			글쓰기
+			<hr>
+		</div>
+		<form action="">
+			<div id="category_border">
+				<select name="" id="category">
+					<option value="">자유게시판</option>
+					<option value="">무슨게시판</option>
+				</select>
+			</div>
+			<div id="title_write_border">
+				<input type="text" id="board_title" placeholder="제목을 입력해주세요.">
+			</div>
+			<br>
+			<div id="create_wrtie_border">
+				<textarea name="" id="board_write_area" placeholder="내용을 입력해주세요."></textarea>
+			</div>
+			<div id="border_submit_btn">
+				<button type="submit" id="submit_btn">등록</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

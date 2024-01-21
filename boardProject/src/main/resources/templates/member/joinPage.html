@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>joinMember</title>
+<style>
+    #joinPage_wrap{
+        margin: auto;
+        width: 500px;
+        height: auto;
+    }
+    #join_header{
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+    }
+    #join_form{
+        border: 1px solid black;
+        margin: auto;
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        padding: 30px;
+    }
+    input{
+        width: 430px;
+        height: 40px;
+    }
+    #join_button{
+        width: 440px;
+        height: 60px;
+    }
+</style>
+</head>
+<body>
+    <div id="joinPage_wrap">
+        <div id="join_header">
+            <h1>회원가입</h1>
+        </div>
+        <form action="join" method="post" id="join_form">
+            <span>이름</span>
+            <input type="text" name="userName" placeholder="이름" required><br><br>
+            <span>아이디</span>
+            <input type="text" id="userId" name="userId" placeholder="아이디" required><br><br>
+            <span>비밀번호</span>
+            <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" required><br><br>
+            <span>비밀번호 확인</span>
+            <input type="text" placeholder="비밀번호 확인" required><br><br>
+            <span>생년월일(6자)</span>
+            <input type="text" name="birthday" placeholder="ex) 990103" required><br><br>
+            <span>전화번호</span>
+            <input type="text" name="phone" placeholder="ex) 01012345678" required><br><br>
+            <button type="submit" id="join_button">회원가입</button>
+        </form>
+    </div>
+</body>
+</html>

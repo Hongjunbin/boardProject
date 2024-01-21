@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<style>
+	#main_content_border{
+		width: 1250px;
+		height: auto;
+		margin: auto;
+	}
+	/*메인화면 왼쪽 리모컨*/
+	#main_left_content{
+		padding-top: 10px;
+		width: 15%;
+		height: 800px; /*나중에 auto로 해야함.*/
+		border: 1px solid black;
+		float: left;
+		box-sizing: border-box;
+	}
+	/*메인화면 가운데 콘텐츠 영역*/
+	#main_middle_content{
+		padding-top: 10px;
+		width: 70%;
+		height: 800px; /*나중에 auto로 해야함.*/
+		float: left;
+		box-sizing: border-box;
+	}
+
+	/*메인화면 오른쪽 콘텐츠 영역*/
+	#main_right_content{
+		padding-top: 10px;
+		width: 15%;
+		height: 800px; /*나중에 auto로 해야함.*/
+		border: 1px solid black;
+		float: left;
+		box-sizing: border-box;
+	}
+
+
+	/* 이미지 영역 사이즈 조절 */
+	.swiper {
+        width: 800px;
+        height: 200px;
+    }
+    /* 이미지 사이즈 조절 */
+    .swiper-slide>img {
+        width : 100%;
+        height : 100%;
+    }
+    /* 화살표 버튼색 변경 (기본색은 파란색) */
+    div[class^=swiper-button] {
+        color : white;
+        /* display : none; */ /* 아니면 안보이게 숨기기도 가능 */
+    }
+
+	/*메인에 middle부분(게시판 컨텐츠 부분)*/
+	#main_board_content{
+		height: 500px;
+		width: 875px;
+		box-sizing: border-box;
+	}
+	#main_allBoard_border{
+		height: 100%;
+		width: 50%;
+		padding: 37.5px;
+		padding-right: 15px;
+		box-sizing: border-box;
+		float: left;
+	}
+	#main_freeBoard_border{
+		height: 100%;
+		width: 50%;
+		padding: 37.5px;
+		padding-left: 15px;
+		box-sizing: border-box;
+		float: left;
+	}
+	#main_allBoardList{
+		border: 1px solid black;
+		height: 100%;
+		width: 100%;
+	}
+	#main_freeBoardList{
+		border: 1px solid black;
+		height: 100%;
+		width: 100%;
+	}
+	/*padding: 37.5px;*/
+
+</style>
+</head>
+<body>
+	<div th:replace="~{common/header :: header}"></div>
+	<div id="main_content_border">
+		<div id="main_left_content"></div>
+		<div id="main_middle_content">
+			<div id="main_content_banner">
+				<div id="content_1">
+					<!-- Slider main container -->
+					<div class="swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide"><img src="https://www.shutterstock.com/image-illustration/banner-800-x-200-pixels-260nw-1995278918.jpg"></div>
+							<div class="swiper-slide"><img src="https://www.freewebheaders.com/wp-content/gallery/nature-size-800x200/cache/beautiful-river-trees-snow-mountain-clouds-nature-landscape-web-header_size-800x200.jpg-nggid049365-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg"></div>
+							<div class="swiper-slide"><img src="https://file.miricanvas.com/template_thumb/2021/05/20/13/30/k432dajc1gfbawz3/thumb.jpg"></div>
+						</div>
+					
+						<!-- If we need pagination -->
+						<div class="swiper-pagination"></div>
+					
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					
+						<!-- If we need scrollbar -->
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</div>
+			<div id="main_board_content">
+				<div id="main_allBoard_border">
+					<div id="main_allBoardList"></div>
+				</div>
+				<div id="main_freeBoard_border">
+					<div id="main_freeBoardList"></div>
+				</div>
+			</div>
+		</div>
+		<div id="main_right_content"></div>
+	</div>
+
+	<script>
+		const swiper = new Swiper('.swiper', {
+          autoplay : {
+              delay : 3000 // 3초마다 이미지 변경
+          },
+          loop : true, //반복 재생 여부
+          slidesPerView : 1, // 이전, 이후 사진 미리보기 갯수
+          pagination: { // 페이징 버튼 클릭 시 이미지 이동 가능
+              el: '.swiper-pagination',
+              clickable: true
+          },
+          navigation: { // 화살표 버튼 클릭 시 이미지 이동 가능
+              prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next'
+          }
+      }); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#header{
+		border-bottom: 1px solid rgb(184, 184, 184);
+		width: 1690px;
+		height: 60px;
+		margin: auto;
+	}
+	#header_content{
+		width: 75%;
+		height: 100%;
+		margin: auto;
+		box-sizing: border-box;
+	}
+	/* logo Css */
+	#header_logo{
+		width: 15%;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+	}
+
+	#header_navi{
+		width: 40%;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 16px;
+	}
+	/* Search Css */
+	#header_search{
+		width: 25%;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding-top: 10px;
+	}
+	#search_form{
+		width: 100%;
+		height: 100%;
+	}
+	#search{
+		width: 200px;
+		height: 30px;
+		border-radius: 15px;
+		border: 1px solid rgb(184, 184, 184);
+		font-size: 12px;
+	}
+	#search_button{
+		width: 40px;
+		height: 30px;
+		text-align: center;
+		font-size: 12px;
+		border-radius: 12px;
+		border: 1px solid rgb(184, 184, 184);
+		background-color: rgb(255, 200, 200);
+		color: rgb(0, 0, 0);
+		cursor: pointer;
+	}
+
+	#imggg{
+		width: 90%;
+		height: 90%;
+		padding: 2%;
+	}
+	#nickName{
+		font-size: 12px;
+		color: rgb(87, 87, 87);
+	}
+
+	#header_member{
+		width: 20%;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 10px;
+	}
+	#login_btn{
+		border: 1px solid rgb(184, 184, 184);
+		background-color: rgb(167, 205, 252);
+		border-radius: 15px;
+		width: 70px;
+		height: 30px;
+		font-size: 12px;
+	}
+	#join_btn{
+		border: 1px solid rgb(184, 184, 184);
+		background-color: rgb(167, 205, 252);
+		border-radius: 15px;
+		width: 70px;
+		height: 30px;
+		font-size: 12px;
+	}
+	#logout_btn{
+		border: 1px solid rgb(184, 184, 184);
+		background-color: rgb(167, 205, 252);
+		border-radius: 15px;
+		width: 70px;
+		height: 30px;
+		font-size: 12px;
+	}
+	#getWritePage_btn{
+		border: 1px solid rgb(184, 184, 184);
+		background-color: rgb(167, 205, 252);
+		border-radius: 15px;
+		width: 90px;
+		height: 30px;
+		font-size: 12px;
+	}
+	a{
+		text-decoration: none;
+		color: black;	
+	}
+	.navi_board{
+		font-size: 14px;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+    <div id="header">
+		<div id="header_content">
+			<div id="header_logo" onclick="logo();">
+				<img src="https://blog.kakaocdn.net/dn/cd2MQ5/btqx0q65v5Y/mKwQKWKh0HNtslQkgsktE0/img.jpg" id="imggg">
+			</div>
+			<div id="header_navi">
+				&nbsp;&nbsp;&nbsp;
+				<span  id="notice_board"><a class="navi_board">공지사항</a></span>
+				&nbsp;&nbsp;&nbsp;
+				<span id="all_board"><a class="navi_board" th:href="@{allBoardPage}">전체게시판</a></span>
+				&nbsp;&nbsp;&nbsp;
+				<span id="all_board"><a class="navi_board">자유게시판</a></span>
+			</div>
+			<div id="header_search">
+				<form action="" id="search_form">
+					<input type="text" id="search" placeholder="   검색">  
+					<button id="search_button" type="submit">검색</button>
+				</form>
+			</div>
+			<div id="header_member">
+				<button id="login_btn" th:if="${session.loginUser == null}"><a th:href="@{loginPage}">로그인</a></button>   
+				<button id="join_btn" th:if="${session.loginUser == null}"><a th:href="@{joinPage}">회원가입</a></button>
+				<div th:if="${session.loginUser != null}">
+					<span id="nickName" th:text="${session.loginUser.userName}"></span> 
+					<button id="getWritePage_btn"><a th:href="@{getWritePage}">게시글 작성</a></button>  
+					<button id="logout_btn"><a th:href="@{logout}">로그아웃</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function logo(){
+			location.href="main"
+		}
+	</script>
+</body>
+</html>

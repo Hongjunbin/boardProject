@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#board_table{
+		border-collapse: collapse;
+		margin: auto;
+		margin-top: 20px;
+	}
+	tr{
+		width: auto;
+		height: 40px;
+	}
+	#td_boardNo{
+		width: 30px;
+	}
+	#td_boardTitle{
+		width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+</style>
+</head>
+<body>
+	<div th:replace="~{common/header :: header}"></div>
+	<table border="1px solid black" id="board_table">
+		<tr th:each="list : ${list}" id="board_table">
+			<td th:text="${list.boardNo}" id="td_boardNo"></td>
+			<td th:text="${list.boardTitle}" id="td_boardTitle"></td>
+			<td th:text="${list.userName}"></td>
+			<td th:text="${list.boardDate}"></td>
+		</tr>
+	</table>
+</body>
+</html>

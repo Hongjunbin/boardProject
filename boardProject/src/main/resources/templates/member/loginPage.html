@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    #loginPage_wrap{
+        margin: auto;
+        width: 500px;
+        height: auto;
+    }
+    #login_header{
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+    }
+    #login_form{
+        border: 1px solid black;
+        margin: auto;
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        padding: 30px;
+    }
+    #userId{
+        width: 430px;
+        height: 40px;
+    }
+    #userPwd{
+        width: 430px;
+        height: 40px;
+    }
+    #login_button{
+        width: 440px;
+        height: 60px;
+    }
+</style>
+</head>
+<body>
+    <div id="loginPage_wrap">
+        <div id="login_header">
+            <h1>로그인</h1>
+        </div>
+        <form action="login" method="post" id="login_form">
+        	<input type="text" id="userId" name="userId" placeholder="아이디" required> <br><br>
+            <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" required> <br>
+            <span th:text="${errorMsg}"></span><br>
+            <button type="submit" id="login_button">로그인버튼쓰</button>
+        </form>
+    </div>
+
+</body>
+</html>
