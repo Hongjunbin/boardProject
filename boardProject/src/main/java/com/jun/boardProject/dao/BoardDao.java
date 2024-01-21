@@ -10,5 +10,7 @@ import com.jun.boardProject.vo.Board;
 public interface BoardDao {
 	
 	public List<Board> allBoardPage();
+	
+	public int insertWrite(Board board);
 
 }

@@ -17,5 +17,9 @@ public class BoardService {
 	public List<Board> allBoardPage() {
 		return boardDao.allBoardPage();
 	}
+	
+	public int insertWrite(Board board) {
+		return boardDao.insertWrite(board);
+	}
 
 }

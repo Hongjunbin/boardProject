@@ -75,19 +75,19 @@
 			글쓰기
 			<hr>
 		</div>
-		<form action="">
+		<form action="insertWrite" method="get">
 			<div id="category_border">
-				<select name="" id="category">
-					<option value="">자유게시판</option>
-					<option value="">무슨게시판</option>
+				<select name="categoryNo" id="category">
+					<option value="1">자유게시판</option>
+					<option value="2">무슨게시판</option>
 				</select>
 			</div>
 			<div id="title_write_border">
-				<input type="text" id="board_title" placeholder="제목을 입력해주세요.">
+				<input type="text" id="board_title" name="boardTitle" placeholder="제목을 입력해주세요.">
 			</div>
 			<br>
 			<div id="create_wrtie_border">
-				<textarea name="" id="board_write_area" placeholder="내용을 입력해주세요."></textarea>
+				<textarea id="board_write_area" name="boardWriting" placeholder="내용을 입력해주세요."></textarea>
 			</div>
 			<div id="border_submit_btn">
 				<button type="submit" id="submit_btn">등록</button>

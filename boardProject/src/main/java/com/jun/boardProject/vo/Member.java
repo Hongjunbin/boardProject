@@ -19,7 +19,7 @@ public class Member {
 	private String userId;
 	private String userPwd;
 	private String userName;
-	private int birthday;
+	private String birthday;
 	private String phone;
 	private Date enrollDate;
 	private Date modifyDate;
