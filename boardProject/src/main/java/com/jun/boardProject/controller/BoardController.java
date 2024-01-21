@@ -24,6 +24,7 @@ public class BoardController {
 		mv.addObject("list", list);
 		mv.setViewName("board/allBoardPage");
 		System.out.println(".");
+		System.out.println(".....................................");
 		return mv;
 	}
 	
