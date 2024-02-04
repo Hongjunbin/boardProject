@@ -19,6 +19,11 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
+	
+	@GetMapping("/board")
+	public String boardPage() {
+		return "자바에서 온 Board페이지임";
+	}
 
 	@GetMapping("allBoardPage")
 	public ModelAndView allBoardPage(ModelAndView mv) {
