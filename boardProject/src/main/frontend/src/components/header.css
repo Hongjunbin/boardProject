@@ -1,0 +1,27 @@
+.header{
+    background-color: black;
+    height: 30px;
+    padding: 10px;
+}
+.blogTitle{
+    color: white;
+    font-size: 20px;
+}
+.leftContent{
+    border: 1px solid black;
+    width: 200px;
+    height: 700px;
+    box-sizing: border-box;
+    float: left;
+    padding: 20px;
+}
+.leftContent2{
+    width: 30px;
+    height: 800px;
+    float: left;
+}
+.linkTag{
+    font-size: 25px;
+    color: black;
+    text-decoration-line: none;
+}
