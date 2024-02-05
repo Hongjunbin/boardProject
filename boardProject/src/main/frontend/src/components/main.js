@@ -1,9 +1,9 @@
-import './Main.css';
+import './main.css';
 
 function Main(){
 
     return(
-        <div>
+        <div className='main'>
             메인페이지임.
         </div>
     );

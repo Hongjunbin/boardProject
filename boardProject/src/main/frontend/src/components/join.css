@@ -1,0 +1,30 @@
+.join{
+    margin: auto;
+    width: 500px;
+    height: auto;
+    padding-left: 220px;
+    padding-top: 20px;
+}
+#join_header{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+}
+#join_form{
+    border: 1px solid black;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    padding: 30px;
+}
+input{
+    width: 430px;
+    height: 40px;
+}
+#join_button{
+    width: 440px;
+    height: 60px;
+}

@@ -19,7 +19,7 @@ function Board(){
     }
 
     return(
-        <div>
+        <div className='boardBorder'>
             {hello}
             <div>
                 <ul>
