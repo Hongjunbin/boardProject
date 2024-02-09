@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './board.css';
+import './boardSerchList.css';
+function BoardSerchList(){
 
-function Board(){
-
-    const [board, setBoard] = useState([]);
+    const [search, setSearch] = useState([]);
     useEffect(() => {
-        axios.get('/board')
+        axios.get('/search')
             .then((res) => {
-                setBoard(res.data);
+                setSearch(res.data);
             })
     }, []);
 
-    const [like, setLike] = useState(0);
-    function likeUpDown(){
-        setLike(like + 1);
-    }
+    // const [like, setLike] = useState(0);
+    // function likeUpDown(){
+    //     setLike(like + 1);
+    // }
 
-    const [boardDetailValue, setBoardDetailValue] = useState([]);
-    const [isShow, setIsshow] = useState(false)
+    // const [boardDetailValue, setBoardDetailValue] = useState([]);
+    // const [isShow, setIsshow] = useState(false)
     
-    function boardTitleClick(boardNo){
-        setBoardDetailValue(board.find((v) => v.boardNo === boardNo));
-        setIsshow(true);
-        console.log(boardDetailValue);
-    }
+    // function boardTitleClick(boardNo){
+    //     setBoardDetailValue(search.find((v) => v.boardNo === boardNo));
+    //     setIsshow(true);
+    //     console.log(boardDetailValue);
+    // }
 
     return(
         <div className='boardBorder'>
-            <div className='boardList'>
+            {search}
+            {/* <div className='boardList'>
                 <div className='boardHeader'>
                     헤더임.
                 </div>
@@ -55,9 +55,9 @@ function Board(){
                 <div className='boardDetailContent'>
                     게시글 : {boardDetailValue.boardWriting}<br/>
                 </div>
-            </div>: null}
+            </div>: null} */}
         </div>
     );
 }
 
-export default Board;
+export default BoardSerchList;

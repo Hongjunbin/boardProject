@@ -18,8 +18,14 @@ public class BoardService {
 		return boardDao.allBoardPage();
 	}
 	
+	public List<Board> searchList(){
+		return boardDao.searchList();
+	}
+	
 	public int insertWrite(Board board) {
 		return boardDao.insertWrite(board);
 	}
+	
+
 
 }

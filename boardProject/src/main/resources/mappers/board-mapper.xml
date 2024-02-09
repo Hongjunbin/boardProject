@@ -19,6 +19,8 @@
 		  LEFT OUTER JOIN MEMBER M ON B.USER_NO = M.USER_NO
 	</select>
 	
+	
+	
 	<insert id="insertWrite" parameterType="com.jun.boardProject.vo.Board">
 		INSERT INTO BOARD VALUES(
 		                         SEQ_BNO.NEXTVAL, 

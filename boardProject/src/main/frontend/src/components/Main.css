@@ -1,4 +1,8 @@
 .main{
-    float: left;
-    box-sizing: border-box;
+    padding-top: 20px;
+    padding-right: 20px;
+    width: 1400px;
+    height: 875px;
+    padding-left: 240px;
+    border: 1px solid black;
 }

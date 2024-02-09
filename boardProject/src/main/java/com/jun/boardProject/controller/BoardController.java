@@ -19,19 +19,20 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
-	
-	@GetMapping("/board")
-	public String boardPage() {
-		return "자바에서 온 Board페이지임";
-	}
 
-	@GetMapping("allBoardPage")
-	public ModelAndView allBoardPage(ModelAndView mv) {
+	@GetMapping("/board")
+	public List<Board> allBoardPage() {
 		List<Board> list = boardService.allBoardPage();
-		mv.addObject("list", list);
-		mv.setViewName("board/allBoardPage");
-		return mv;
+		return list;
 	}
+	
+//	@GetMapping("/search")
+//	public List<Board> searchList(@RequestParam("keyword") String keyword) {
+//		System.out.println(keyword);
+//		List<Board> list = boardService.searchList();
+//		return list;
+//	}
+	
 	
 	@GetMapping("getWritePage")
 	public ModelAndView getWritePage(ModelAndView mv, HttpSession session) {

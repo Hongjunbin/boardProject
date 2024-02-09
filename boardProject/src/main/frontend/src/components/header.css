@@ -1,9 +1,16 @@
 .leftHeader{
     background-color: black;
     width: 220px;
-    height: 880px;
+    height: 896px;
     float: left;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+    overflow:auto;
+  
 }
 .headerTitle{
     width: 100%;
@@ -18,13 +25,13 @@
     padding: 20px;
 }
 .blogTitle{
-    color: white;
+    color: rgb(201, 152, 248);
     font-size: 25px;
+    text-decoration-line: none;
 }
 .linkTag{
-    font-size: 20px;
-    color: black;
-    color: white;
+    font-size: 18px;
+    color: rgb(202, 202, 202);
     text-decoration-line: none;
 }
 .headerContents{

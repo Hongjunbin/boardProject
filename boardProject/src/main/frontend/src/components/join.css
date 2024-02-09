@@ -20,7 +20,7 @@
     box-sizing: border-box;
     padding: 30px;
 }
-input{
+.joinInput{
     width: 430px;
     height: 40px;
 }

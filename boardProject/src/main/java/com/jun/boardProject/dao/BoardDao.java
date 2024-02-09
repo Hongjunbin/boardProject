@@ -11,6 +11,9 @@ public interface BoardDao {
 	
 	public List<Board> allBoardPage();
 	
+	public List<Board> searchList();
+	
 	public int insertWrite(Board board);
+	
 
 }

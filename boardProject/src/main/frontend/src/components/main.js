@@ -4,7 +4,7 @@ function Main(){
 
     return(
         <div className='main'>
-            메인페이지임.
+            여러가지 사이트 공지사항 넣는 메인페이지
         </div>
     );
 }
