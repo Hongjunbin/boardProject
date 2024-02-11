@@ -25,6 +25,7 @@ function Board(){
         setIsshow(true);
         console.log(boardDetailValue);
     }
+    
 
     return(
         <div className='boardBorder'>

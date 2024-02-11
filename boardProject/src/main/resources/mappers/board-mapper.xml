@@ -19,7 +19,22 @@
 		  LEFT OUTER JOIN MEMBER M ON B.USER_NO = M.USER_NO
 	</select>
 	
-	
+	<select id="searchList" parameterType="String" resultType="com.jun.boardProject.vo.Board">
+		SELECT 
+		       B.BOARD_NO boardNo,
+		       M.USER_NAME userName,
+		       B.USER_NO userNo,
+		       B.BOARD_TITLE boardTitle,
+		       B.BOARD_WRITING boardWriting,
+		       B.BOARD_HITS boardHits,
+		       B.BOARD_DATE boardDate,
+		       B.CATEGORY_NO categoryNo
+		  FROM 
+		       BOARD B 
+		  LEFT OUTER JOIN MEMBER M ON B.USER_NO = M.USER_NO 
+		 WHERE 
+		       BOARD_TITLE LIKE '%'||#{keyword}||'%'
+	</select>
 	
 	<insert id="insertWrite" parameterType="com.jun.boardProject.vo.Board">
 		INSERT INTO BOARD VALUES(

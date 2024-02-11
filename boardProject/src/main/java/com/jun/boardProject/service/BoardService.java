@@ -18,13 +18,19 @@ public class BoardService {
 		return boardDao.allBoardPage();
 	}
 	
-	public List<Board> searchList(){
-		return boardDao.searchList();
+	public List<Board> searchList(String keyword){
+		return boardDao.searchList(keyword);
 	}
 	
-	public int insertWrite(Board board) {
-		return boardDao.insertWrite(board);
-	}
+//	public List<Board> searchList(){
+//		return boardDao.searchList();
+//	}
+//	
+//	public int insertWrite(Board board) {
+//		return boardDao.insertWrite(board);
+//	}
+	
+
 	
 
 

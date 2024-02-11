@@ -26,43 +26,43 @@ public class BoardController {
 		return list;
 	}
 	
-//	@GetMapping("/search")
-//	public List<Board> searchList(@RequestParam("keyword") String keyword) {
-//		System.out.println(keyword);
-//		List<Board> list = boardService.searchList();
-//		return list;
+	@GetMapping("/search")
+	public List<Board> searchList(@RequestParam("keyword") String keyword) {
+		System.out.println(keyword);
+		List<Board> list = boardService.searchList(keyword);
+		return list;
+	}
+	
+	
+//	@GetMapping("getWritePage")
+//	public ModelAndView getWritePage(ModelAndView mv, HttpSession session) {
+//		if(session.getAttribute("loginUser") == null) {
+//			mv.setViewName("redirect:/");
+//			return mv;
+//		}
+//		mv.setViewName("board/boardWritePage");
+//		return mv;
 //	}
-	
-	
-	@GetMapping("getWritePage")
-	public ModelAndView getWritePage(ModelAndView mv, HttpSession session) {
-		if(session.getAttribute("loginUser") == null) {
-			mv.setViewName("redirect:/");
-			return mv;
-		}
-		mv.setViewName("board/boardWritePage");
-		return mv;
-	}
-	
-	@GetMapping("insertWrite")
-	public ModelAndView insertWrite(ModelAndView mv, 
-			                        HttpSession session,
-			                        Board board) {
-		
-		Member member = (Member)session.getAttribute("loginUser");
-		
-		board.setUserNo(member.getUserNo());
-		board.setUserName(member.getUserName());
-		
-		if(boardService.insertWrite(board) == 0) {
-			System.out.println("게시글 등록 실패");
-			mv.setViewName("redirect:/");
-			return mv;
-		}
-		
-		mv.setViewName("redirect:/");
-		
-		return mv;
-	}
-	
+//	
+//	@GetMapping("insertWrite")
+//	public ModelAndView insertWrite(ModelAndView mv, 
+//			                        HttpSession session,
+//			                        Board board) {
+//		
+//		Member member = (Member)session.getAttribute("loginUser");
+//		
+//		board.setUserNo(member.getUserNo());
+//		board.setUserName(member.getUserName());
+//		
+//		if(boardService.insertWrite(board) == 0) {
+//			System.out.println("게시글 등록 실패");
+//			mv.setViewName("redirect:/");
+//			return mv;
+//		}
+//		
+//		mv.setViewName("redirect:/");
+//		
+//		return mv;
+//	}
+//	
 }

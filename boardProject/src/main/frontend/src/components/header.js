@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Header(){
+
+
+    const [keyword, setKeyword] = useState();
 
     return(
         <div className="leftHeader">
             <div className='headerTitle'>
             <Link to="/" className='blogTitle'>React Blogggg</Link>
             </div>
-            <div className='headerContents'>
+            <div className='hea`derContents'>
                 <br/>
                 <div>
                 <Link to="/login" className='linkTag'>로그인</Link>
@@ -17,9 +21,24 @@ function Header(){
                 <Link to="/join" className='linkTag'>회원가입</Link>
                 <br/>
                 <hr/>
-                <form action='/search' method="get">
-                    <input type="text" name='keyword' placeholder='검색'/>
-                </form>
+                <div>
+                    <input onChange={(e)=>{
+                        setKeyword(e.target.value);
+                    }}/>
+
+                    <button onClick={()=>{
+                        if(keyword === ''){
+                            return alert('검색어를 입력해주세요!');
+                        }
+                        axios.get("/search",{
+                            params:{
+                                keyword : keyword
+                            }
+                        }).catch(function(){
+                            console.log('실패함')
+                        })
+                    }}>전송</button>
+                </div>
                 <br/>
                 <Link to="/board" className='linkTag'>Board로이동</Link>
                 <hr/>
