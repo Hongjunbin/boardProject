@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './header.css';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 
 function Header(){
 
+    const navigate = useNavigate();
 
     const [keyword, setKeyword] = useState();
 
@@ -30,13 +31,8 @@ function Header(){
                         if(keyword === ''){
                             return alert('검색어를 입력해주세요!');
                         }
-                        axios.get("/search",{
-                            params:{
-                                keyword : keyword
-                            }
-                        }).catch(function(){
-                            console.log('실패함')
-                        })
+                        navigate('/board', {state : {keyword : keyword}});
+
                     }}>전송</button>
                 </div>
                 <br/>

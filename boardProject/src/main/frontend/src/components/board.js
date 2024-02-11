@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 import './board.css';
 
 function Board(){
 
+    const location = useLocation();
+
+
     const [board, setBoard] = useState([]);
     useEffect(() => {
-        axios.get('/board')
+        const userInfo = {...location.state};
+        axios.get('/board', {keyword : userInfo})
             .then((res) => {
                 setBoard(res.data);
             })
+            console.log(userInfo);
     }, []);
 
     const [like, setLike] = useState(0);

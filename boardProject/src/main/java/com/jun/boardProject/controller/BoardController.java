@@ -21,8 +21,12 @@ public class BoardController {
 	private BoardService boardService;
 
 	@GetMapping("/board")
-	public List<Board> allBoardPage() {
-		List<Board> list = boardService.allBoardPage();
+	public List<Board> allBoardPage(@RequestParam("keyword") String keyword) {
+		if("".equals(keyword)) {
+			List<Board> list = boardService.allBoardPage();
+			return list;
+		}
+		List<Board> list = boardService.searchList(keyword);
 		return list;
 	}
 	

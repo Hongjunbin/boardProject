@@ -4,7 +4,6 @@ import Main from './components/main';
 import Header from './components/header';
 import Login from './components/login';
 import Join from './components/join';
-import BoardSerchList from './components/boardSerchList';
 
 function App(){
 
@@ -16,7 +15,6 @@ function App(){
         <Route path='/login' element={<Login />} />
         <Route path='/join' element={<Join />} />
         <Route path='/board' element={<Board />} />
-        <Route path='/search' element={<BoardSerchList />} />
       </Routes>
     </div>
   );
